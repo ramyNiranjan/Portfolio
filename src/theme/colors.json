@@ -1,0 +1,14 @@
+{
+  "primary": {
+    "color": "#08FDD8",
+    "onColor": "#FFF"
+  },
+
+  "background": {
+    "color": "#1D1D1D",
+    "onColor": "#2B2B2B"
+  },
+  "accent_1": {
+    "color": "#626362"
+  }
+}
