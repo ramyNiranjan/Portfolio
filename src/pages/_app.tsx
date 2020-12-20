@@ -1,8 +1,35 @@
-import {AppProps} from 'next/app'
-import '../styles/index.css'
+import { AppProps } from "next/app";
+import { AnimatePresence } from "framer-motion";
+import "../styles/index.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const pageTransitionVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+    pageExit: {
+      opacity: 0,
+      transition: {
+        ease: "easeInOut",
+        type: "tween",
+      },
+    },
+  };
+  return (
+    <AnimatePresence exitBeforeEnter>
+      <Component
+        {...pageProps}
+        pageTransitionVariants={pageTransitionVariants}
+      />
+      ;
+    </AnimatePresence>
+  );
 }
 
-export default MyApp
+export default MyApp;

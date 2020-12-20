@@ -18,8 +18,21 @@ module.exports = {
       },
       fontFamily: {
         exo: ['"Exo 2"'],
+        iceland: ["Iceland"],
       },
-      screens: {},
+      screens: {
+        // "sm-minMax": { raw: "((min-width: 640px) and (min-width: 740px) )" },
+        // "sm-minMax": "(min-width: 640px) and (min-width: 740px)",
+      },
+      animation: {
+        scroller: "scroller 20s linear infinite;",
+      },
+      keyframes: {
+        scroller: {
+          "0%": { left: 0 },
+          "100%": { left: "-100%" },
+        },
+      },
       spacing: {
         22: "5.5rem",
       },

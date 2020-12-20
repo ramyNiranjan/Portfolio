@@ -3,10 +3,18 @@ import React from "react";
 import { motion } from "framer-motion";
 import Button from "../components/Button";
 import Layout from "../components/Layout";
+import { fetchIntoText } from "../contentfull/contenfullCMS";
 
-interface HomeProps {}
+interface introTextProps {
+  [key: string]: string;
+}
 
-export const Home: React.FC<HomeProps> = ({}) => {
+interface HomeProps {
+  introInfo: introTextProps[];
+}
+
+export const Home: React.FC<HomeProps> = ({ introInfo }) => {
+  // console.log(introInfo);
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -23,8 +31,14 @@ export const Home: React.FC<HomeProps> = ({}) => {
         mass: 0.4,
         damping: 8,
         bounce: 0.5,
-        staggerChildren: 0.4,
+        staggerChildren: 0.6,
         when: "beforeChildren",
+      },
+    },
+    pageExit: {
+      opacity: 0,
+      transition: {
+        ease: "easeInOut",
       },
     },
   };
@@ -41,15 +55,16 @@ export const Home: React.FC<HomeProps> = ({}) => {
   return (
     <Layout title="Home | Next.js + TypeScript Example">
       <motion.div
-        className="flex  px-4 text-center flex-col justify-center items-center   w-full h-screen  py-4 tracking-normal"
+        className="flex flex-col items-center justify-center w-full h-screen px-4 py-4 tracking-normal text-center"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
+        exit="pageExit"
       >
-        <div className="font-semibold text-4xl  leading-snug mb-4">
-          <h1 className="text-white ">Hello, I’m Ramy Niranjan. I’m a</h1>
+        <div className="mb-4 text-4xl font-semibold leading-snug">
+          <h1 className="text-white ">{introInfo[0].title}</h1>
           <motion.span className="text-primary-100" variants={childVariants}>
-            fullstack developer.
+            {introInfo[0].name}
           </motion.span>
         </div>
 
@@ -64,5 +79,18 @@ export const Home: React.FC<HomeProps> = ({}) => {
     </Layout>
   );
 };
+
+export async function getStaticProps() {
+  const res = await fetchIntoText();
+  const introInfo = await res.map((p) => {
+    return p.fields;
+  });
+  return {
+    props: {
+      introInfo,
+    },
+    revalidate: 60,
+  };
+}
 
 export default Home;

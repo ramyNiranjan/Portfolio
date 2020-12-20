@@ -1,15 +1,14 @@
-import React from "react";
 import { motion } from "framer-motion";
-import Layout from "../components/Layout";
 import { useRouter } from "next/router";
+import React from "react";
+import Layout from "../components/Layout";
 
 interface WorksProps {
   pageTransitionVariants: { [key: string]: {} };
 }
 
-export const Works: React.FC<WorksProps> = ({ pageTransitionVariants }) => {
+const Contact: React.FC<WorksProps> = ({ pageTransitionVariants }) => {
   const router = useRouter();
-
   return (
     <Layout title="Home | Next.js + TypeScript Example">
       <motion.div
@@ -37,4 +36,4 @@ export const Works: React.FC<WorksProps> = ({ pageTransitionVariants }) => {
   );
 };
 
-export default Works;
+export default Contact;
