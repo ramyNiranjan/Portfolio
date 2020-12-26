@@ -16,5 +16,13 @@ export async function fetchSkills() {
   const entries = await client.getEntries({ content_type: "skills" });
   if (entries.items) return entries.items;
 }
+export async function fetchAboutMe() {
+  const entries = await client.getEntries({ content_type: "aboutMe" });
+  if (entries.items) return entries.items;
+}
+export async function fetchprojects() {
+  const entries = await client.getEntries({ content_type: "projects" });
+  if (entries.items) return entries.items;
+}
 
-export default { fetchIntoText, fetchSkills };
+export default { fetchIntoText, fetchSkills, fetchAboutMe, fetchprojects };

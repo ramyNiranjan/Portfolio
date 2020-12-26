@@ -8,7 +8,16 @@
   @apply absolute transform -translate-x-1/2 top-2/4 left-1/2 -translate-y-2/4;
 }
 .trans-ease-out {
-  @apply transition duration-700 ease-out;
+  @apply transition duration-500 ease-out;
+}
+
+.tsparticles {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @import "tailwindcss/utilities";

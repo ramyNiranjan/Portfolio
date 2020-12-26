@@ -24,8 +24,13 @@ module.exports = {
         // "sm-minMax": { raw: "((min-width: 640px) and (min-width: 740px) )" },
         // "sm-minMax": "(min-width: 640px) and (min-width: 740px)",
       },
+      width: {
+        "width-200": "200%",
+        "width-400": "400%",
+        "width-200vw": "200vw",
+      },
       animation: {
-        scroller: "scroller 20s linear infinite;",
+        scroller: "scroller 20s linear infinite ;",
       },
       keyframes: {
         scroller: {
@@ -35,6 +40,12 @@ module.exports = {
       },
       spacing: {
         22: "5.5rem",
+      },
+      gridTemplateColumns: {
+        "auto-fill": "repeat(auto-fill,250px)",
+      },
+      gridAutoRows: {
+        250: "250px",
       },
     },
   },

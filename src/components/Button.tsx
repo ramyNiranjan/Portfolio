@@ -9,6 +9,7 @@ interface ButtonProps {
   textColor: string;
   title: string;
   borderColor: string;
+  padY?: string;
   variants?: {};
 }
 
@@ -19,6 +20,7 @@ const Button: React.FC<ButtonProps> = ({
   title,
   borderColor,
   variants,
+  padY = "4",
 }) => {
   const handleClick = () => {
     console.log("Free pizza!");
@@ -26,7 +28,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <motion.button
       className={classnames(
-        `text-${textColor} font-semibold py-4 px-6 trans-ease-out `,
+        `text-${textColor} font-semibold py-${padY} px-6 trans-ease-out tracking-wider mb-4 ml-4 `,
         bgColor ? `bg-${bgColor}` : "bg-transparent",
         `border rounded border-${borderColor} focus:outline-none`,
         {

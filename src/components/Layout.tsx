@@ -15,12 +15,12 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
         {/* <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" /> */}
       </Head>
-      <div className="flex flex-col min-h-screen ">
+      <div className="flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow  2xl:container  2xl:mx-auto">
+        <main className="relative flex-grow 2xl:container 2xl:mx-auto">
           {children}
         </main>
-        <footer className="bg-secondary-200 w-full px-4 py-4 flex justify-center item-end">
+        <footer className="flex justify-center w-full px-4 py-4 bg-secondary-200 item-end">
           <span className="text-white">I'm here to stay (Footer)</span>
         </footer>
       </div>
