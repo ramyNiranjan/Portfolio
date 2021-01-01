@@ -14,27 +14,20 @@ interface introTextProps {
 interface HomeProps {
   introInfo: introTextProps[];
   skills: any;
-  pageTransitionVariants: { [key: string]: {} };
 }
 
-export const Home: React.FC<HomeProps> = ({
-  introInfo,
-  skills,
-  pageTransitionVariants,
-}) => {
+export const Home: React.FC<HomeProps> = ({ introInfo, skills }) => {
   console.log(skills);
   const router = useRouter();
   const containerVariants = {
     hidden: {
       opacity: 0,
-      x: "100vw",
       transition: {
         staggerChildren: 0.5,
       },
     },
     visible: {
       opacity: 1,
-      x: 0,
       transition: {
         type: "spring",
         mass: 0.4,
@@ -66,7 +59,7 @@ export const Home: React.FC<HomeProps> = ({
       <motion.div
         className="flex flex-col items-center justify-center w-full h-screen px-4 py-4 tracking-normal text-center "
         key={router.route}
-        variants={pageTransitionVariants}
+        variants={containerVariants}
         initial="hidden"
         animate="visible"
         exit="pageExit"
