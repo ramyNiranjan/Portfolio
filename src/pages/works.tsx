@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import Layout from "../components/Layout";
 import { useRouter } from "next/router";
+
+import Layout from "../components/Layout";
 import Button from "../components/Button";
 import { fetchprojects } from "../contentfull/contenfullCMS";
 import ProjectCard from "../components/ProjectCard";
@@ -49,15 +49,10 @@ export const Works: React.FC<WorksProps> = ({
         </div>
         <div className="max-w-screen-xl mx-auto">
           <div className="grid justify-center grid-flow-row-dense gap-5 grid-cols-auto-fill auto-rows-250">
-            {projects && projects.map(({ url }) => <ProjectCard url={url} />)}
-
-            <div className="bg-red-200">card</div>
-            <div className="bg-red-200">card</div>
-            <div className="bg-red-200">card</div>
-            <div className="bg-red-200">card</div>
-            <div className="bg-red-200">card</div>
-            <div className="bg-red-200">card</div>
-            <div className="bg-red-200">card</div>
+            {projects &&
+              projects.map(({ url }, idx: number) => (
+                <ProjectCard key={idx} url={url} />
+              ))}
           </div>
         </div>
       </motion.div>

@@ -56,11 +56,8 @@ export const Home: React.FC<HomeProps> = ({ introInfo, skills }) => {
 
   return (
     <Layout title="Home | Next.js + TypeScript Example">
-      {/* <div className="absolute inset-0 w-full h-full bg-cover">
-      </div> */}
       <motion.div
         className="flex flex-col items-center justify-center w-full h-screen px-4 py-4 tracking-normal text-center "
-        // id="tsparticles"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
