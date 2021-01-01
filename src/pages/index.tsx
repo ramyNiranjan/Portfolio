@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import Layout from "../components/Layout";
 import { fetchIntoText, fetchSkills } from "../contentfull/contenfullCMS";
 import ParticleContainer from "../components/ParticleContainer";
+import { useRouter } from "next/router";
 
 interface introTextProps {
   [key: string]: string;
@@ -13,10 +14,16 @@ interface introTextProps {
 interface HomeProps {
   introInfo: introTextProps[];
   skills: any;
+  pageTransitionVariants: { [key: string]: {} };
 }
 
-export const Home: React.FC<HomeProps> = ({ introInfo, skills }) => {
+export const Home: React.FC<HomeProps> = ({
+  introInfo,
+  skills,
+  pageTransitionVariants,
+}) => {
   console.log(skills);
+  const router = useRouter();
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -58,9 +65,10 @@ export const Home: React.FC<HomeProps> = ({ introInfo, skills }) => {
     <Layout title="Home | Next.js + TypeScript Example">
       <motion.div
         className="flex flex-col items-center justify-center w-full h-screen px-4 py-4 tracking-normal text-center "
+        key={router.route}
+        variants={pageTransitionVariants}
         initial="hidden"
         animate="visible"
-        variants={containerVariants}
         exit="pageExit"
       >
         <div className="z-10 mb-4 text-4xl font-semibold leading-snug">
@@ -75,7 +83,7 @@ export const Home: React.FC<HomeProps> = ({ introInfo, skills }) => {
           title="View My Work"
           textSize="lg"
           textColor="white"
-          borderColor="primary-300"
+          // borderColor="primary-300"
           variants={childVariants}
         />
       </motion.div>

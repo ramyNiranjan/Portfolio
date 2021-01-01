@@ -17,11 +17,11 @@ export const Works: React.FC<WorksProps> = ({
   projects,
 }) => {
   const router = useRouter();
-  console.log(projects);
+  // console.log(projects);
   const buttonNames = ["All", "Reactjs", "Nodejs", "Nextjs", "Vanillajs"];
 
   return (
-    <Layout title="Home | Next.js + TypeScript Example">
+    <Layout title="My Personal Projects">
       <motion.div
         className="mt-32"
         key={router.route}
@@ -41,7 +41,6 @@ export const Works: React.FC<WorksProps> = ({
                 title={title}
                 textSize="sm"
                 textColor="white"
-                // borderColor="primary-300"
                 padY="2"
               />
             ))}
@@ -75,7 +74,6 @@ export async function getStaticProps() {
       },
     } = p.fields;
 
-    console.log(p);
     return { name, githubRepo, techStack, websiteUrl, url };
   });
 
@@ -83,7 +81,7 @@ export async function getStaticProps() {
     props: {
       projects,
     },
-    revalidate: 60,
+    revalidate: 120,
   };
 }
 
