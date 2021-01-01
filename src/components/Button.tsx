@@ -8,7 +8,7 @@ interface ButtonProps {
   bgColor?: string;
   textColor: string;
   title: string;
-  borderColor: string;
+  borderColor?: string;
   padY?: string;
   variants?: {};
 }
