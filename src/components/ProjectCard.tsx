@@ -13,6 +13,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ url }) => {
         src={`http:${url}`}
         layout="fill"
         objectFit="cover"
+        priority
       />
     </div>
   );
