@@ -1,5 +1,5 @@
 import React from "react";
-import { NextRouter, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import classnames from "classnames";
 

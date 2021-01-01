@@ -30,13 +30,13 @@ const Button: React.FC<ButtonProps> = ({
       className={classnames(
         `text-${textColor} font-semibold py-${padY} px-6 trans-ease-out tracking-wider mb-4 ml-4 `,
         bgColor ? `bg-${bgColor}` : "bg-transparent",
-        `border rounded border-${borderColor} focus:outline-none`,
+        `border rounded border-primary-300 focus:outline-none`,
         {
           "text-base": textSize === "sm",
           "text-xl": textSize === "lg",
           "text-2xl": textSize === "2xl",
         },
-        ` hover:bg-${borderColor}   transform  active:scale-95 `
+        ` hover:bg-primary-300   transform  active:scale-95 `
       )}
       onClick={handleClick}
       type="button"

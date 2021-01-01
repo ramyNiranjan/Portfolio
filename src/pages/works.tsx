@@ -41,7 +41,7 @@ export const Works: React.FC<WorksProps> = ({
                 title={title}
                 textSize="sm"
                 textColor="white"
-                borderColor="primary-300"
+                // borderColor="primary-300"
                 padY="2"
               />
             ))}
