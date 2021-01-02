@@ -54,7 +54,7 @@ export const Works: React.FC<WorksProps> = ({
           <div className="grid justify-center grid-flow-row-dense gap-5 grid-cols-auto-fill auto-rows-250">
             {projects &&
               projects
-                .filter((item) => item.techStack.includes(selectedValue))
+                .filter((item: any) => item.techStack.includes(selectedValue))
                 .map(({ url }, idx: number) => (
                   <ProjectCard key={idx} url={url} />
                 ))}
