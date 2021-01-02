@@ -40,7 +40,6 @@ export const Works: React.FC<WorksProps> = ({
               <Button
                 key={index}
                 title={title}
-                bgColor="primary-300"
                 textSize="sm"
                 textColor="white"
                 padY="2"

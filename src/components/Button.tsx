@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 interface ButtonProps {
   textSize: string;
   value?: string;
-  bgColor?: string;
   textColor: string;
   title: string;
   isActive?: boolean;
@@ -16,7 +15,6 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({
   textSize,
-  bgColor,
   textColor,
   title,
   isActive,
@@ -28,7 +26,7 @@ const Button: React.FC<ButtonProps> = ({
     <motion.button
       className={classnames(
         `text-${textColor} font-semibold py-${padY} px-6 trans-ease-out tracking-wider mb-4 ml-4 `,
-        isActive ? `bg-${bgColor}` : "bg-transparent",
+        isActive ? `bg-primary-300` : "bg-transparent",
         `border rounded border-primary-300 focus:outline-none`,
         {
           "text-base": textSize === "sm",
