@@ -77,6 +77,7 @@ export const Home: React.FC<HomeProps> = ({ introInfo, skills }) => {
           textSize="lg"
           textColor="white"
           // borderColor="primary-300"
+          onClick={() => router.push("/works")}
           variants={childVariants}
         />
       </motion.div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
@@ -17,7 +17,8 @@ export const Works: React.FC<WorksProps> = ({
   projects,
 }) => {
   const router = useRouter();
-  // console.log(projects);
+  console.log(projects);
+  const [selectedValue, setSelectedValue] = useState("All");
   const buttonNames = ["All", "Reactjs", "Nodejs", "Nextjs", "Vanillajs"];
 
   return (
@@ -39,9 +40,12 @@ export const Works: React.FC<WorksProps> = ({
               <Button
                 key={index}
                 title={title}
+                bgColor="primary-300"
                 textSize="sm"
                 textColor="white"
                 padY="2"
+                onClick={() => setSelectedValue(title)}
+                isActive={title === selectedValue}
               />
             ))}
           </div>
@@ -49,9 +53,11 @@ export const Works: React.FC<WorksProps> = ({
         <div className="max-w-screen-xl mx-auto">
           <div className="grid justify-center grid-flow-row-dense gap-5 grid-cols-auto-fill auto-rows-250">
             {projects &&
-              projects.map(({ url }, idx: number) => (
-                <ProjectCard key={idx} url={url} />
-              ))}
+              projects
+                .filter((item) => item.techStack.includes(selectedValue))
+                .map(({ url }, idx: number) => (
+                  <ProjectCard key={idx} url={url} />
+                ))}
           </div>
         </div>
       </motion.div>

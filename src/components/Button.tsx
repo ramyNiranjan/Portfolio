@@ -8,9 +8,10 @@ interface ButtonProps {
   bgColor?: string;
   textColor: string;
   title: string;
-  borderColor?: string;
+  isActive?: boolean;
   padY?: string;
   variants?: {};
+  onClick?: any;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -18,18 +19,16 @@ const Button: React.FC<ButtonProps> = ({
   bgColor,
   textColor,
   title,
-  borderColor,
+  isActive,
+  onClick,
   variants,
   padY = "4",
 }) => {
-  const handleClick = () => {
-    console.log("Free pizza!");
-  };
   return (
     <motion.button
       className={classnames(
         `text-${textColor} font-semibold py-${padY} px-6 trans-ease-out tracking-wider mb-4 ml-4 `,
-        bgColor ? `bg-${bgColor}` : "bg-transparent",
+        isActive ? `bg-${bgColor}` : "bg-transparent",
         `border rounded border-primary-300 focus:outline-none`,
         {
           "text-base": textSize === "sm",
@@ -38,7 +37,7 @@ const Button: React.FC<ButtonProps> = ({
         },
         ` hover:bg-primary-300   transform  active:scale-95 `
       )}
-      onClick={handleClick}
+      onClick={onClick}
       type="button"
       variants={variants}
     >
