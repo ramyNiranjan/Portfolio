@@ -11,6 +11,7 @@ interface ButtonProps {
   padY?: string;
   variants?: {};
   onClick?: any;
+  ml?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -21,16 +22,19 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   variants,
   padY = "4",
+  ml = 4,
 }) => {
   return (
     <motion.button
       className={classnames(
-        `text-${textColor} font-semibold py-${padY} px-6 trans-ease-out tracking-wider mb-4 ml-4 `,
+        `text-${textColor} font-semibold py-${padY} px-6 trans-ease-out tracking-wider mb-4 ml-${ml}`,
         isActive ? `bg-primary-300` : "bg-transparent",
         `border rounded border-primary-300 focus:outline-none`,
         {
-          "text-base": textSize === "sm",
-          "text-xl": textSize === "lg",
+          "text-xs": textSize === "xs",
+          "text-sm": textSize === "sm",
+          "text-lg": textSize === "lg",
+          "text-xl": textSize === "xl",
           "text-2xl": textSize === "2xl",
         },
         ` hover:bg-primary-300   transform  active:scale-95 `

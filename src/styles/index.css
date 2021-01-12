@@ -10,6 +10,9 @@
 .trans-ease-out {
   @apply transition duration-500 ease-out;
 }
+.link-style {
+  @apply p-2 transform border rounded-lg border-primary-300 hover:bg-primary-500 hover:border-transparent active:scale-95 trans-ease-out;
+}
 
 .tsparticles {
   position: absolute;
@@ -27,6 +30,13 @@
     .filter-none {
       filter: none;
     }
+    .filter-dropshadow {
+      filter: brightness(30%);
+    }
+    .filter-bright-icon {
+      filter: brightness(50%);
+    }
+
     .filter-grayscale {
       filter: grayscale(100%);
       transition-property: all;

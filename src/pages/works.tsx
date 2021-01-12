@@ -31,11 +31,11 @@ export const Works: React.FC<WorksProps> = ({
         animate="visible"
         exit="pageExit"
       >
-        <h1 className="mb-4 text-lg tracking-wider text-center underline uppercase text-primary-300">
+        <h1 className="mb-4 text-lg tracking-wider text-center text-white underline uppercase">
           Projects
         </h1>
         <div className="max-w-screen-md mx-auto">
-          <div className="flex flex-wrap content-around justify-around px-4 py-4">
+          <div className="flex flex-wrap content-around justify-center px-4 ">
             {buttonNames.map((title, index) => (
               <Button
                 key={index}
@@ -54,8 +54,8 @@ export const Works: React.FC<WorksProps> = ({
             {projects &&
               projects
                 .filter((item: any) => item.techStack.includes(selectedValue))
-                .map(({ url }, idx: number) => (
-                  <ProjectCard key={idx} url={url} />
+                .map((item, idx: number) => (
+                  <ProjectCard key={idx} {...item} />
                 ))}
           </div>
         </div>
@@ -86,7 +86,7 @@ export async function getStaticProps() {
     props: {
       projects,
     },
-    revalidate: 120,
+    revalidate: 10,
   };
 }
 
