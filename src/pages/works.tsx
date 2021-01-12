@@ -17,7 +17,6 @@ export const Works: React.FC<WorksProps> = ({
   projects,
 }) => {
   const router = useRouter();
-  console.log(projects);
   const [selectedValue, setSelectedValue] = useState("All");
   const buttonNames = ["All", "Reactjs", "Nodejs", "Nextjs", "Vanillajs"];
 
