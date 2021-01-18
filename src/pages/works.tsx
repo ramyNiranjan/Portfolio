@@ -30,11 +30,11 @@ export const Works: React.FC<WorksProps> = ({
         animate="visible"
         exit="pageExit"
       >
-        <h1 className="mb-4 text-lg tracking-wider text-center uppercase text-secondary-300">
+        <h1 className="mb-8 text-2xl font-bold text-center text-secondary-300">
           Projects
         </h1>
         <div className="max-w-screen-md mx-auto">
-          <div className="flex flex-wrap content-around justify-center px-4 ">
+          <div className="flex flex-wrap content-around justify-center px-4 mb-4 ">
             {buttonNames.map((title, index) => (
               <Button
                 key={index}
@@ -49,7 +49,7 @@ export const Works: React.FC<WorksProps> = ({
           </div>
         </div>
         <div className="max-w-screen-xl mx-auto">
-          <div className="grid justify-center grid-flow-row-dense gap-5 grid-cols-auto-fill auto-rows-250">
+          <div className="grid justify-center grid-flow-row-dense gap-5 mb-8 grid-cols-auto-fill auto-rows-250">
             {projects &&
               projects
                 .filter((item: any) => item.techStack.includes(selectedValue))

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { yupResolver } from "@hookform/resolvers/yup";
+
 import { useForm } from "react-hook-form";
 import { useToasts } from "react-toast-notifications";
 import React from "react";
@@ -9,6 +10,7 @@ import Layout from "../components/Layout";
 import { TextInput } from "../components/TextInput";
 import { schemaContact } from "../utils/validationSchema";
 import axios from "axios";
+import { ContactInfo } from "../components/ContactInfo";
 
 interface WorksProps {
   pageTransitionVariants: { [key: string]: {} };
@@ -20,7 +22,7 @@ const Contact: React.FC<WorksProps> = ({ pageTransitionVariants }) => {
     resolver: yupResolver(schemaContact),
   });
   const { addToast } = useToasts();
-  const onSubmit = ({ name, email, message }, e) => {
+  const onSubmit = ({ name, email, message }, e: any) => {
     axios({
       method: "POST",
       url: "https://formspree.io/f/xjvplvgp",
@@ -43,20 +45,28 @@ const Contact: React.FC<WorksProps> = ({ pageTransitionVariants }) => {
   return (
     <Layout title="Contact me">
       <motion.div
-        className="h-screen mt-22"
+        className="flex items-center justify-start w-full min-h-screen mt-12 sm:mt-0"
         key={router.route}
         variants={pageTransitionVariants}
         initial="hidden"
         animate="visible"
         exit="pageExit"
       >
-        <div className="flex flex-col items-center justify-start w-full min-h-full ">
-          <h1 className="text-2xl text-center text-secondary-300">
+        <div className="flex flex-col items-center justify-center w-full h-full px-8 ">
+          <h1 className="text-2xl font-bold text-center text-secondary-300">
             Contact me
           </h1>
-          <h4 className="text-xl text-center text-primary-300">
-            Have a question or want to work together
+          <h4 className="text-lg text-center text-primary-300">
+            Have a question or want to know more about me
           </h4>
+
+          <div className="flex flex-wrap content-around justify-around w-full mt-4 md:w-3/4 lg:w-1/2">
+            <ContactInfo title="LinkedIn" url="/linkedin.svg" />
+
+            <ContactInfo title="ramy.niranjan@gmail.com" url="/mail.svg" />
+            <ContactInfo title="+44700903714" url="/call.svg" />
+          </div>
+
           <div className="w-full mx-auto md:w-1/2">
             <form
               noValidate
@@ -87,7 +97,7 @@ const Contact: React.FC<WorksProps> = ({ pageTransitionVariants }) => {
               />
               <div className="mt-4">
                 <Button
-                  title="Submit"
+                  title="Send message"
                   textSize="sm"
                   textColor="white"
                   padY="2"

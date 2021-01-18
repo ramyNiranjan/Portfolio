@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   };
   return (
     <AnimatePresence exitBeforeEnter>
-      <ToastProvider>
+      <ToastProvider placement="top-center">
         <Component
           {...pageProps}
           pageTransitionVariants={pageTransitionVariants}

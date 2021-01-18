@@ -33,7 +33,7 @@ const About: React.FC<aboutProps> = ({
         animate="visible"
         exit="pageExit"
       >
-        <h1 className="mb-4 text-lg tracking-wider text-center underline uppercase text-primary-300">
+        <h1 className="mb-4 text-2xl font-bold text-center text-secondary-300">
           About Me
         </h1>
         <img
@@ -49,7 +49,7 @@ const About: React.FC<aboutProps> = ({
           </div>
         )}
 
-        <h1 className="text-lg tracking-wider text-center underline uppercase text-primary-300">
+        <h1 className="text-2xl font-bold text-center text-secondary-300">
           Skills
         </h1>
         <div className="flex flex-wrap justify-around pr-8 overflow-hidden content-evenly h-80 sm:hidden">
