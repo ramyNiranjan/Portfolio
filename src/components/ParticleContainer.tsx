@@ -6,7 +6,6 @@ interface ParticlesProps {
 }
 
 export const ParticleContainer: React.FC<ParticlesProps> = ({ skills }) => {
-  console.log("ddddd", skills);
   return (
     <Particles
       className="absolute inset-0 w-full h-full bg-no-repeat bg-cover "
@@ -63,7 +62,6 @@ export const ParticleContainer: React.FC<ParticlesProps> = ({ skills }) => {
             enable: true,
           },
           move: {
-            // attract: { enable: false, rotateX: 600, rotateY: 1200 },
             direction: "none",
             enable: true,
             outMode: "bounce",

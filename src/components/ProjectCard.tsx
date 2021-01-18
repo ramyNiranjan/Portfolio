@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Button from "./Button";
 
 interface ProjectCardProps {
   [key: string]: string;
@@ -16,7 +15,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   const newTechStack = techStack.replace(/\/All/, "");
   return (
     <div className="relative">
-      {/* <div className="absolute inset-0 w-full h-full "></div> */}
       <Image
         className="absolute inset-0 object-cover w-full h-full filter-dropshadow"
         src={`http:${url}`}

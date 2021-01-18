@@ -17,7 +17,6 @@ interface HomeProps {
 }
 
 export const Home: React.FC<HomeProps> = ({ introInfo, skills }) => {
-  console.log(skills);
   const router = useRouter();
   const containerVariants = {
     hidden: {
@@ -76,7 +75,6 @@ export const Home: React.FC<HomeProps> = ({ introInfo, skills }) => {
           title="View My Work"
           textSize="lg"
           textColor="white"
-          // borderColor="primary-300"
           onClick={() => router.push("/works")}
           variants={childVariants}
         />

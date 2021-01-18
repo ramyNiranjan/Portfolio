@@ -61,9 +61,17 @@ const Contact: React.FC<WorksProps> = ({ pageTransitionVariants }) => {
           </h4>
 
           <div className="flex flex-wrap content-around justify-around w-full mt-4 md:w-3/4 lg:w-1/2">
-            <ContactInfo title="LinkedIn" url="/linkedin.svg" />
+            <ContactInfo
+              title="LinkedIn"
+              url="/linkedin.svg"
+              href="https://www.linkedin.com/in/niranjan-ramasamy-098797153/"
+            />
 
-            <ContactInfo title="ramy.niranjan@gmail.com" url="/mail.svg" />
+            <ContactInfo
+              title="ramy.niranjan@gmail.com"
+              url="/mail.svg"
+              href="mailto:ramy.niranjan@gmail.com"
+            />
             <ContactInfo title="+44700903714" url="/call.svg" />
           </div>
 

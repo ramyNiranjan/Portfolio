@@ -46,12 +46,6 @@ input:-webkit-autofill {
       filter: brightness(50%);
     }
 
-    .filter-grayscale {
-      filter: grayscale(100%);
-      transition-property: all;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 500ms;
-    }
     .scroller-stop {
       animation-play-state: paused;
     }
