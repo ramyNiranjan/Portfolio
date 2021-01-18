@@ -15,7 +15,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const newTechStack = techStack.replace(/\/All/, "");
   return (
-    <div className="relative bg-red-100">
+    <div className="relative">
       {/* <div className="absolute inset-0 w-full h-full "></div> */}
       <Image
         className="absolute inset-0 object-cover w-full h-full filter-dropshadow"

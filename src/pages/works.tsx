@@ -18,7 +18,7 @@ export const Works: React.FC<WorksProps> = ({
 }) => {
   const router = useRouter();
   const [selectedValue, setSelectedValue] = useState("All");
-  const buttonNames = ["All", "Reactjs", "Nodejs", "Nextjs", "Vanillajs"];
+  const buttonNames = ["All", "Reactjs", "Nodejs", "Vanillajs"];
 
   return (
     <Layout title="My Personal Projects">
