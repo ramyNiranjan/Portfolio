@@ -72,7 +72,7 @@ const Contact: React.FC<WorksProps> = ({ pageTransitionVariants }) => {
               url="/mail.svg"
               href="mailto:ramy.niranjan@gmail.com"
             />
-            <ContactInfo title="+44700903714" url="/call.svg" />
+            <ContactInfo title="+46700903714" url="/call.svg" />
           </div>
 
           <div className="w-full mx-auto md:w-1/2">

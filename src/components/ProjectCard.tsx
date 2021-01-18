@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface ProjectCardProps {
   [key: string]: string;
@@ -13,10 +14,28 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   websiteUrl,
 }) => {
   const newTechStack = techStack.replace(/\/All/, "");
+  const projectVariant = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+        type: "tween",
+      },
+    },
+  };
   return (
-    <div className="relative">
+    <motion.div
+      className="relative trans-ease-out"
+      initial="hidden"
+      animate="visible"
+      variants={projectVariant}
+    >
       <Image
-        className="absolute inset-0 object-cover w-full h-full filter-dropshadow"
+        className="absolute inset-0 object-cover w-full h-full filter-dropshadow trans-ease-out"
         src={`http:${url}`}
         height="250px"
         width="250px"
@@ -53,7 +72,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

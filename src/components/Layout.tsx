@@ -18,11 +18,11 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
         <main className="relative flex-grow 2xl:container 2xl:mx-auto">
           {children}
         </main>
-        <footer className="flex justify-between w-full px-4 py-4 text-xs tracking-wide text-secondary-300 bg-secondary-200 item-end">
-          <span className="text-white">
+        <footer className="flex flex-col items-center justify-around w-full px-4 py-4 text-xs tracking-wide text-secondary-300 bg-secondary-200 item-end sm:flex-row sm:justify-between ">
+          <span className="mb-1 sm:mb-0">
             Made with ❤ by using Nextjs and Contentfull
           </span>
-          <span className="text-white">&copy; Ramy Niranjan</span>
+          <span className="">&copy; Ramy Niranjan</span>
         </footer>
       </div>
     </>
