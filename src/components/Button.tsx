@@ -11,6 +11,7 @@ interface ButtonProps {
   padY?: string;
   variants?: {};
   onClick?: any;
+  type?: "button" | "submit" | "reset";
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -21,6 +22,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   variants,
   padY = "4",
+  type = "button",
 }) => {
   return (
     <motion.button
@@ -38,7 +40,7 @@ const Button: React.FC<ButtonProps> = ({
         ` hover:bg-primary-300   transform  active:scale-95 `
       )}
       onClick={onClick}
-      type="button"
+      type={type}
       variants={variants}
     >
       {title}

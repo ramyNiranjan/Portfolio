@@ -24,7 +24,7 @@ const About: React.FC<aboutProps> = ({
   const router = useRouter();
   const aboutMeInfo = content[0]?.content[0]?.value;
   return (
-    <Layout title="Home | Next.js + TypeScript Example">
+    <Layout title="About me">
       <motion.div
         className="mt-28"
         key={router.route}
@@ -43,7 +43,7 @@ const About: React.FC<aboutProps> = ({
         />
         {aboutMeInfo && (
           <div className="max-w-screen-md mx-auto">
-            <p className="px-6 mb-4 leading-7 tracking-wider text-gray-300 break-words">
+            <p className="px-6 mb-4 leading-7 tracking-wider break-words text-secondary-300">
               {aboutMeInfo}
             </p>
           </div>

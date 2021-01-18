@@ -23,6 +23,15 @@
   background-size: cover;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #2b2b2b inset !important;
+}
+input:-webkit-autofill {
+  -webkit-text-fill-color: #d0d3d1 !important;
+}
 @import "tailwindcss/utilities";
 
 @layer utilities {
@@ -31,7 +40,7 @@
       filter: none;
     }
     .filter-dropshadow {
-      filter: brightness(30%);
+      filter: brightness(90%);
     }
     .filter-bright-icon {
       filter: brightness(50%);

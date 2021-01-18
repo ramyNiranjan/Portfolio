@@ -15,26 +15,28 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const newTechStack = techStack.replace(/\/All/, "");
   return (
-    <div className="relative">
+    <div className="relative bg-red-100">
+      {/* <div className="absolute inset-0 w-full h-full "></div> */}
       <Image
-        className="absolute inset-0 object-cover w-full h-full filter-dropshadow "
+        className="absolute inset-0 object-cover w-full h-full filter-dropshadow"
         src={`http:${url}`}
-        // height="250px"
-        // width="250px"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="50% 50%"
+        height="250px"
+        width="250px"
+        layout="fixed"
+        objectPosition="50% 0%"
         priority
       />
-      <div className="absolute inset-0 flex flex-col items-center object-cover w-full h-full bg-gray-800 opacity-0 trans-ease-out justify-evenly hover:opacity-90">
+
+      <div className="absolute inset-0 flex flex-col items-center object-cover w-full h-full bg-gray-800 opacity-0 trans-ease-out justify-evenly hover:opacity-100">
         <div>
           <h4 className="text-xl text-center text-primary-100">{name}</h4>
-          <div className="flex text-gray-300">
-            <span className="tracking-wider">{newTechStack}</span>
-            {/* <span>vanillajs</span> */}
+          <div className="flex text-gray-300 ">
+            <span className="w-full text-sm tracking-wide text-center">
+              {newTechStack}
+            </span>
           </div>
         </div>
-        <div className="flex justify-around w-full text-gray-300">
+        <div className="flex justify-around w-full text-sm text-gray-300">
           <a
             href={websiteUrl}
             target="_blank"

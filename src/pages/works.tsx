@@ -30,7 +30,7 @@ export const Works: React.FC<WorksProps> = ({
         animate="visible"
         exit="pageExit"
       >
-        <h1 className="mb-4 text-lg tracking-wider text-center text-white underline uppercase">
+        <h1 className="mb-4 text-lg tracking-wider text-center uppercase text-secondary-300">
           Projects
         </h1>
         <div className="max-w-screen-md mx-auto">

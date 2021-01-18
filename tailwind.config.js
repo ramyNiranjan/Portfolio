@@ -3,6 +3,7 @@ module.exports = {
     "./src/components/**/*.{ts,tsx,js,jsx}",
     "./src/pages/**/*.{ts,tsx,js,jsx}",
   ],
+  // plugins: [require("@tailwindcss/custom-forms")],
   theme: {
     extend: {
       colors: {
@@ -16,6 +17,7 @@ module.exports = {
         secondary: {
           100: "#1D1D1D",
           200: "#2B2B2B",
+          300: "#D0D3D1",
         },
       },
       fontFamily: {
@@ -54,7 +56,6 @@ module.exports = {
   variants: {
     extend: {
       scale: ["active"],
-      // textColor: ["hover"],
     },
   },
   plugins: [],

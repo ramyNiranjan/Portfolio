@@ -55,7 +55,7 @@ export const Home: React.FC<HomeProps> = ({ introInfo, skills }) => {
   };
 
   return (
-    <Layout title="Home | Next.js + TypeScript Example">
+    <Layout title="Home">
       <motion.div
         className="flex flex-col items-center justify-center w-full h-screen px-4 py-4 tracking-normal text-center "
         key={router.route}
