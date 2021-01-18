@@ -45,7 +45,7 @@ const Contact: React.FC<WorksProps> = ({ pageTransitionVariants }) => {
   return (
     <Layout title="Contact me">
       <motion.div
-        className="flex items-center justify-start w-full min-h-screen mt-12 sm:mt-0"
+        className="flex items-center justify-start w-full min-h-screen mt-22 sm:mt-0"
         key={router.route}
         variants={pageTransitionVariants}
         initial="hidden"
@@ -56,7 +56,7 @@ const Contact: React.FC<WorksProps> = ({ pageTransitionVariants }) => {
           <h1 className="text-2xl font-bold text-center text-secondary-300">
             Contact me
           </h1>
-          <h4 className="text-lg text-center text-primary-300">
+          <h4 className="text-center text-md md:text-lg text-primary-300">
             Have a question or want to know more about me
           </h4>
 
