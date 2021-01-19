@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import React from "react";
 
 import Layout from "../components/Layout";
-import { fetchSkills, fetchAboutMe } from "../contentfull/contenfullCMS";
+import { fetchSkills } from "../contentfull/contenfullCMS";
 import Scroller from "../components/Scroller";
 
 interface skillsProps {
@@ -13,16 +13,11 @@ interface skillsProps {
 interface aboutProps {
   pageTransitionVariants: { [key: string]: {} };
   skills: skillsProps[];
-  content: any;
 }
 
-const About: React.FC<aboutProps> = ({
-  pageTransitionVariants,
-  skills,
-  content,
-}) => {
+const About: React.FC<aboutProps> = ({ pageTransitionVariants, skills }) => {
   const router = useRouter();
-  const aboutMeInfo = content[0]?.content[0]?.value;
+
   return (
     <Layout title="About me">
       <motion.div
@@ -41,13 +36,29 @@ const About: React.FC<aboutProps> = ({
           alt=""
           className="block object-cover w-32 h-32 mx-auto mb-4 rounded-full"
         />
-        {aboutMeInfo && (
-          <div className="max-w-screen-md mx-auto">
-            <p className="px-6 mb-4 leading-7 tracking-wider break-words text-secondary-300">
-              {aboutMeInfo}
-            </p>
-          </div>
-        )}
+
+        <div className="max-w-screen-md mx-auto">
+          <p className="px-8 mb-4 antialiased leading-7 tracking-wider break-words text-secondary-300 text-md">
+            I am a junior full stack developer. I live in Stockholm and
+            currently working as a frontend developer intern at
+            <a
+              target="_blank"
+              href="https://redmind.se/"
+              className="ml-1 text-red-500"
+              rel="noopener noreferrer"
+            >
+              Redmind
+            </a>
+            . I am well experienced in fullstack development but I also take
+            pride in being a design nerd. I also have experience using a wide
+            range of industry-standard tech stacks, which are listed in my
+            skills section below. As a person, I like challenges and eager to
+            learn new things, I am currently learning Python and Linux. My
+            greatest strengths are my ability to understand and cater to a wide
+            range of customer base, and the ability to integrate my
+            multicultural exposure to build sophisticated applications.
+          </p>
+        </div>
 
         <h1 className="text-2xl font-bold text-center text-secondary-300">
           Skills
@@ -87,7 +98,7 @@ const About: React.FC<aboutProps> = ({
 
 export async function getStaticProps() {
   const res = await fetchSkills();
-  const aboutMe: any = await fetchAboutMe();
+
   const skills = await res.map((p: any) => {
     const {
       title,
@@ -101,16 +112,9 @@ export async function getStaticProps() {
     return { title, url, iconTitle };
   });
 
-  const {
-    fields: {
-      about: { content },
-    },
-  } = await aboutMe[0];
-
   return {
     props: {
       skills,
-      content,
     },
     revalidate: 60,
   };
