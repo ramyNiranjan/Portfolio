@@ -48,7 +48,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         <div>
           <h4 className="text-xl text-center text-primary-100">{name}</h4>
           <div className="flex text-gray-300 ">
-            <span className="w-full text-sm tracking-wide text-center">
+            <span className="w-full text-xs tracking-wide text-center">
               {newTechStack}
             </span>
           </div>

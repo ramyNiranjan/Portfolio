@@ -59,7 +59,6 @@ const Contact: React.FC<WorksProps> = ({ pageTransitionVariants }) => {
           <h4 className="text-center text-md md:text-lg text-primary-300">
             Have a question or want to know more about me
           </h4>
-
           <div className="flex flex-wrap content-around justify-around w-full mt-4 md:w-3/4 lg:w-1/2">
             <ContactInfo
               title="LinkedIn"
@@ -74,7 +73,6 @@ const Contact: React.FC<WorksProps> = ({ pageTransitionVariants }) => {
             />
             <ContactInfo title="+46700903714" url="/call.svg" />
           </div>
-
           <div className="w-full mx-auto md:w-1/2">
             <form
               noValidate

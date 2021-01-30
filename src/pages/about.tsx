@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -31,11 +32,13 @@ const About: React.FC<aboutProps> = ({ pageTransitionVariants, skills }) => {
         <h1 className="mb-4 text-2xl font-bold text-center text-secondary-300">
           About Me
         </h1>
-        <img
-          src="ramy.jpg"
-          alt=""
-          className="block object-cover w-32 h-32 mx-auto mb-4 rounded-full"
-        />
+        <div className="relative w-32 h-32 mx-auto mb-4 bg-red-100 rounded-full ">
+          <img
+            src="/ramyNew.jpg"
+            alt="ramy's image"
+            className="absolute inset-0 object-cover object-bottom w-full h-full bg-black rounded-full"
+          />
+        </div>
 
         <div className="max-w-screen-md mx-auto">
           <p className="px-8 mb-4 antialiased leading-7 tracking-wider break-words text-secondary-300 text-md">
@@ -44,7 +47,7 @@ const About: React.FC<aboutProps> = ({ pageTransitionVariants, skills }) => {
             <a
               target="_blank"
               href="https://redmind.se/"
-              className="ml-1 text-red-500"
+              className="ml-1 font-bold"
               rel="noopener noreferrer"
             >
               Redmind
